@@ -11,7 +11,7 @@ segment3 = c(50, 70, 70, 85, 0, 90, 85, 15, 65, 35)
 #Reshape data
 library(tidyr)
 data_long <- gather(data, key = "segment", value = "Antibiotics_profiling_pattern", -category)
-# Convert category to factor
+#Convert category to factor
 data_long$category <- factor(data_long$category, levels = rev(unique(data$category)))
 #Create a horizontal stacked bar chart
 ggplot(data_long, aes(x = Antibiotics_profiling_pattern, y = category, fill = segment)) +
